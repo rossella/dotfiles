@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible
 filetype off
 
@@ -13,14 +14,13 @@ Bundle 'klen/python-mode'
 " " The bundles you install will be listed here
 "
 filetype plugin indent on
-"
+" Change leader
+let mapleader = ","
+let g:mapleader = ","
+
 " " The rest of your config follows here
 "
 "map  :NERDTreeToggle
-" Use l to toggle display of whitespace
-nmap l :set list!
-" " And set some nice chars to do it with
-set listchars=tab:»\ ,eol:¬
 "
 " " automatically change window's cwd to file's dir
 set autochdir
@@ -29,13 +29,41 @@ set autochdir
 set tabstop=4
 set shiftwidth=4
 set expandtab
-"
-" " more subtle popup colors
-if has ('gui_running')
-    highlight Pmenu guibg=#cccccc gui=bold
-endif
 
-" Python-mode
+" Basics
+syntax enable
+set number " always show line numbers
+set showmatch " set show matching parenthesis
+set undolevels=1000 " use many muchos levels of undo
+
+" Default background & theme
+set background=dark
+colorscheme solarized
+
+" Special characters for hilighting non-priting spaces/tabs/etc.
+set list listchars=tab:»\ ,trail:·
+
+set autoindent " always set autoindenting on
+set copyindent " copy the previous indentation on autoindenting
+
+" General Code Folding
+set foldmethod=indent
+set foldlevel=99
+
+" General auto-commands
+autocmd FileType * setlocal colorcolumn=0
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+"
+" " Get rid of trailing whitespace highlighting in mutt.
+autocmd FileType mail highlight clear ExtraWhitespace
+autocmd FileType mail setlocal listchars=
+
+" Python configurations
+autocmd FileType python setlocal shiftwidth=4 expandtab tabstop=4 softtabstop=4
+autocmd FileType python setlocal colorcolumn=80
+"
+"
+"
 " " Activate rope
 " " Keys:
 " " K             Show python docs
