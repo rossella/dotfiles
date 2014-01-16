@@ -32,10 +32,17 @@ link_files () {
 }
 
 install_vundle () {
-    if [ -f ~/.vim/bundle/vundle ]
+    info 'installing vundle'
+    if [ ! -d ~/.vim ]
+    then
+        mkdir ~/.vim
+        success 'Created ~/.vim folder'
+    fi
+    if [ ! -d ~/.vim/bundle/vundle ]
     then
        git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    fi
+       success 'Installed Vundle' 
+   fi
 }
 
 install_dotfiles () {

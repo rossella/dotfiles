@@ -2,7 +2,7 @@
 	name = rossella
     email = rossella@midokura.com
 [color]
-    ui = true
+    ui = always
 [color "branch"]
     current = yellow reverse
     local = yellow

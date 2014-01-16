@@ -10,6 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
+Bundle 'nvie/vim-flake8'
 "
 " " The bundles you install will be listed here
 "
