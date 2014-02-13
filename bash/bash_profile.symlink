@@ -1,0 +1,7 @@
+export CLICOLOR=1
+
+export LSCOLORS=GxFxCxDxBxegedabagaced
+#export TERM="Apple_Terminal"
+PS1='\[\033[0;35m\]\u\[\033[0m\]@\[\033[0;37m\]\h\[\033[0m\]:\[\033[0;36m\]\w\[\033[0m\]\$ '
+
+#export LC_ALL="en_US.UTF-8"
